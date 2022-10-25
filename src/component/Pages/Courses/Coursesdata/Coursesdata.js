@@ -8,15 +8,14 @@ const Coursesdata = ({data}) => {
         navigate(`/coursesdetails/${_id}`)
     } 
     return (
-        <div>
-            <div className="card card-compact bg-base-100 shadow-xl h-full">
+        <div className=''>
+            <div className="card card-compact shadow-xl h-full bg-cyan-900 capitalize text-white">
                 <figure><img className='h-48 w-full' src={picture} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{ title}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                    <button onClick={handleButtonCLick} className="btn btn-primary">click</button>
-                    </div>
+                </div>
+                <div className="">
+                    <button onClick={handleButtonCLick} className="btn btn-info rounded-t-none w-full hover: bg-cyan-500">click</button>
                 </div>
             </div>
         </div>

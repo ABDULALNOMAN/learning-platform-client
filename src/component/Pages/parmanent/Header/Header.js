@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/eagle-logo-design-vector-28157853-removebg-preview.png'
 
 const Header = () => {
     return (
         <div className='bg-cyan-900 text-white capitalize'>
             <div className="navbar flex justify-between container mx-auto">
                 <div>
+                    <img className='w-12 h-12 rounded-full ' src={logo} alt="" />
                     <Link to={'/'} className="btn btn-ghost text-xl uppercase italic ">Titan</Link>
                 </div>
                 <div>

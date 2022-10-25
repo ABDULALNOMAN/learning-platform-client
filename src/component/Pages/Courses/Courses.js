@@ -8,12 +8,12 @@ const Courses = () => {
     return (
         <div>
             <div className='flex justify-between container mx-auto'>
-                <div className='border w-1/4 p-4'>
+                <div className=' w-1/4 p-4 bg-cyan-600 text-white capitalize'>
                     {
-                        datas.map(data=><li key={data.index} className='list-none mb-4'><Link>{data.title}</Link></li>)
+                        datas.map(data=><li key={data.index} className='list-none mb-4 hover:underline'><Link to={`/coursesdetails/${data._id}`}>{data.title}</Link></li>)
                     }
                 </div>
-                <div className='border w-3/4 grid grid-cols-3 gap-3'>
+                <div className=' w-3/4 grid grid-cols-3 gap-3 p-3'>
                     {
                         datas.map(data=><Coursesdata key={data.index} data={data}></Coursesdata>)
                     }
