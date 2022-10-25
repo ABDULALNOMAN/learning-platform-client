@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className='bg-cyan-900 text-white capitalize'>
-            <div className="navbar flex justify-between">
+            <div className="navbar flex justify-between container mx-auto">
                 <div>
                     <Link to={'/'} className="btn btn-ghost text-xl uppercase italic ">Titan</Link>
                 </div>
