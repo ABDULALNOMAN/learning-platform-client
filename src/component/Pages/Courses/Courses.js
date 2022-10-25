@@ -13,7 +13,7 @@ const Courses = () => {
                         datas.map(data=><li key={data.index} className='list-none mb-4'><Link>{data.title}</Link></li>)
                     }
                 </div>
-                <div className='border w-3/4'>
+                <div className='border w-3/4 grid grid-cols-3 gap-3'>
                     {
                         datas.map(data=><Coursesdata key={data.index} data={data}></Coursesdata>)
                     }
