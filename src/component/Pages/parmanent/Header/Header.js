@@ -20,7 +20,7 @@ const Header = () => {
                                 <li><Link to={'/courses'}>courses</Link></li>
                                 <li><Link to={''}>FAQ</Link></li>
                                 <li><Link to={''}>blog</Link></li>
-                                <input type="checkbox" className="toggle toggle-sm ml-4" checked />
+                                <input type="checkbox" className="toggle toggle-sm ml-4" />
                                 <li><Link to={'/login'}>login</Link></li>
                             </ul>
                         </div>
@@ -30,7 +30,7 @@ const Header = () => {
                             <li><Link to={'/courses'}>courses</Link></li>
                             <li><Link to={''}>FAQ</Link></li>
                             <li><Link to={''}>Blog</Link></li>
-                            <input type="checkbox" className="toggle" checked />
+                            <input type="checkbox" className="toggle" />
                             <li className='btn btn-warning rounded-md ml-2'><Link to={'/login'}>Login</Link></li>
                         </ul>
                     </div>
