@@ -4,9 +4,8 @@ import router from './component/Route/Route';
 
 function App() {
   return (
-    <div>
+    <div data-theme="dark">
       <RouterProvider router={router}>
-
       </RouterProvider>
     </div>
   );

@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import Main from "../Pages/Layout/Main";
 import Login from "../Pages/Login/Login";
 import Notfound from "../Pages/Notfound/Notfound";
+import Privetroute from "../Pages/Privetroute/Privetroute";
 import Register from "../Pages/Register/Register";
 
 export const router = createBrowserRouter([
@@ -31,7 +32,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/coursesdetails/:id',
-                element: <Coursesdetails></Coursesdetails>,
+                element: <Privetroute><Coursesdetails></Coursesdetails></Privetroute>,
                 loader: (({params})=> {
                     const { id } = params
                     return fetch(`http://localhost:5000/coursesdetails/${id}`)

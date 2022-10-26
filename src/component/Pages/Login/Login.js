@@ -1,16 +1,19 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 import { callContext } from '../../Contexting/Contexting';
 
 const Login = () => {
     const { googleSignIn, githubSignIn,Loginhandleclick } = useContext(callContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
     const handleOnGoogleClick = () => {
         googleSignIn()
             .then((result) => {
                 const user = result.user
-            console.log(user)    
+                console.log(user)    
             })
             .catch((error) => console.log(error))
     }
@@ -23,7 +26,7 @@ const Login = () => {
             .catch((error) => console.log(error))
     }
     const handleOnSigninEmailOrPass = (event) => {
-        event.preventDefault()
+        event.preventDefault()   
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
@@ -31,6 +34,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                navigate(from ,{replace: true})
             })
             .catch((error) => console.log(error))
     }
@@ -46,7 +50,7 @@ const Login = () => {
                             <button onClick={handleOnGithubClick} className='btn btn-primary flex justify-center items-center w-full'><BsGithub className='text-3xl mr-1'></BsGithub><p>github</p></button>
                         </div>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-10 ">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl mt-10 " data-theme='dark'>
                         <form onSubmit={handleOnSigninEmailOrPass} className="card-body">
                             <div className="form-control">
                                 <label className="label">

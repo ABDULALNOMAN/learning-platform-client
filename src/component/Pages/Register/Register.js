@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { callContext } from '../../Contexting/Contexting';
 
 const Register = () => {
-    const { createUser } = useContext(callContext)
-    
+    const { createUser,userNameAndUrl  } = useContext(callContext)
+    const navigate = useNavigate()
     const handleSubmitEmailOrPassword = (event) => {
         event.preventDefault()
         const form = event.target
@@ -15,7 +16,18 @@ const Register = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                handleNameAndUrl(name, image)
+                navigate('/')
             })
+            .catch((error) => console.log(error))
+    }
+    const handleNameAndUrl = (name, image) => {
+        const identity = {
+            displayName: name,
+            photoURL: image,   
+        }
+        userNameAndUrl (identity)
+            .then((result) => { })
             .catch((error) => console.log(error))
     }
     return (

@@ -6,7 +6,7 @@ const Courses = () => {
     const datas = useLoaderData()
     console.log(datas)
     return (
-        <div>
+        <div data-theme='dark'>
             <div className='flex justify-between container mx-auto'>
                 <div className=' w-1/4 p-4 bg-cyan-600 text-white capitalize'>
                     {
