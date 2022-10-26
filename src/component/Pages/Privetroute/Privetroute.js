@@ -4,7 +4,12 @@ import { callContext } from '../../Contexting/Contexting';
 
 const Privetroute = ({ children }) => {
     const location = useLocation()
-    const { user } = useContext(callContext)
+    const { user, loder } = useContext(callContext)
+    if (loder) {
+        return <div className='w-screen text-center translate-y-1/4 h-screen'>
+            <button className="btn btn-square loading"></button>
+        </div>
+    }
     if (user && user.uid) {
         return children
     }

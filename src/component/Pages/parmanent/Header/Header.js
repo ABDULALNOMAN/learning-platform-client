@@ -31,7 +31,7 @@ const Header = () => {
                                 {
                                     user?.uid ? <>
                                         <li onClick={handlelogOutClick}><Link>sign out</Link></li>
-                                        <img className='w-7 h-7 rounded-full ml-4' src={user?.photoURL} alt="" />
+                                        <img title={user?.display} className='w-7 h-7 rounded-full ml-4' src={user?.photoURL} alt="" />
                                     </> : <li><Link to={'/login'}>login</Link></li>
                                 }
                             </ul>
@@ -43,7 +43,7 @@ const Header = () => {
                             <li><Link to={''}>FAQ</Link></li>
                             <li><Link to={''}>Blog</Link></li>
                             {
-                                user?.uid ? <><li onClick={handlelogOutClick}><Link>sign Out</Link></li> <img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" /></> : <li><Link to={'/login'}>Login</Link></li>
+                                user?.uid ? <><li onClick={handlelogOutClick}><Link>sign Out</Link></li><div className="tooltip tooltip-bottom" data-tip={user?.displayName}><img className='w-10 h-10 rounded-full' src={user?.photoURL} alt="" /></div> </> : <li><Link to={'/login'}>Login</Link></li>
                             }
                             <input type="checkbox" className="toggle ml-3" />
                         </ul>
@@ -55,3 +55,6 @@ const Header = () => {
 };
 
 export default Header;
+
+
+

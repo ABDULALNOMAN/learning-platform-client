@@ -8,7 +8,8 @@ const auth = getAuth(app)
 const Contexting = ({ children }) => {
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
-    const [user, setUser]= useState(null)
+    const [user, setUser] = useState(null)
+    const [loder , setLoder] =useState(true)
     const googleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }
@@ -28,13 +29,14 @@ const Contexting = ({ children }) => {
         onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser)
             setUser(currentUser)
+            setLoder(false)
         })
     }, [])
     const logOutClick = () => {
         setUser()
         return signOut(auth)
     }
-    const value = {googleSignIn,githubSignIn,createUser,Loginhandleclick, user, logOutClick,userNameAndUrl }
+    const value = {googleSignIn,githubSignIn,createUser,Loginhandleclick, user, logOutClick,userNameAndUrl, loder }
     return (
         <callContext.Provider value={value}>
             {children}
