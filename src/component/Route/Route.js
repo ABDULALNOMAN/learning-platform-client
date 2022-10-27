@@ -30,14 +30,14 @@ export const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>,
-                loader:()=>fetch('http://localhost:5000/courses')
+                loader:()=>fetch('https://information-tecnology-server.vercel.app/courses')
             },
             {
                 path: '/coursesdetails/:id',
                 element:<Coursesdetails></Coursesdetails>,
                 loader: (({params})=> {
                     const { id } = params
-                    return fetch(`http://localhost:5000/coursesdetails/${id}`)
+                    return fetch(`https://information-tecnology-server.vercel.app/coursesdetails/${id}`)
                 })
             },
             {
@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
                 element: <Privetroute><Checkout></Checkout></Privetroute>,
                 loader: (({ params}) => {
                     const {index}=params
-                    return fetch(`http://localhost:5000/courses/coursesdetails/checkout/${index}`)
+                    return fetch(`https://information-tecnology-server.vercel.app/courses/coursesdetails/checkout/${index}`)
                 })
             },
             {
