@@ -9,13 +9,13 @@ const Coursesdata = ({data}) => {
     } 
     return (
         <div className=''>
-            <div className="card card-compact shadow-xl h-full bg-cyan-900 capitalize text-white">
-                <figure><img className='h-48 w-full' src={picture} alt="Shoes" /></figure>
+            <div className="card card-compact shadow-xl h-full bg-cyan-900 capitalize text-white w-full">
+                <figure><img className='h-48 w-full' src={picture} alt="" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{ title}</h2>
                 </div>
                 <div className="">
-                    <button onClick={handleButtonCLick} className="btn btn-info rounded-t-none w-full hover: bg-cyan-500">click</button>
+                    <button onClick={handleButtonCLick} className="btn btn-info rounded-t-none w-full hover: bg-cyan-600">click</button>
                 </div>
             </div>
         </div>

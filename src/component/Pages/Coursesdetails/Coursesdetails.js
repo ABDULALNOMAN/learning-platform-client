@@ -1,27 +1,14 @@
 import React from 'react';
-import { Link, useLoaderData, useNavigate } from 'react-router-dom';
-import { BsFillFileEarmarkPdfFill } from 'react-icons/bs';
+import { useLoaderData } from 'react-router-dom';
+import Details from '../Details/Details';
 
 const Coursesdetails = () => {
-    const item = useLoaderData()
-    const { title, picture, details,_id } = item
-    const navigate = useNavigate()
-    const accessToClick = () => {
-        navigate(`/courses/coursesdetails/checkout/${_id}`)
-    }
+    const items = useLoaderData()
     return (
-        <div className='lg:h-screen h-full'>
-            <div className='container mx-auto w-3/4 p-4 translate-y-7 border-r-8 text-white capitalize bg-sky-800'>
-                <div className='flex justify-between items-center'>
-                    <h2 className='text-4xl font-semibold'>{title}</h2>
-                    <Link><BsFillFileEarmarkPdfFill className='text-3xl'></BsFillFileEarmarkPdfFill></Link>
-                </div>
-                <div className='grid grid-cols-3 mt-5'>
-                    <img className='col-span-1 h-full' src={picture} alt="" />
-                    <p className='col-span-2 ml-3'>{details}</p>
-                </div>
-                <button onClick={accessToClick} className=' text-center btn btn-info mt-3  hover:btn-success'>get premium access</button>
-            </div>
+        <div>
+            {
+                items.map(item => <Details key={item.index} item={item}></Details>)
+            }
         </div>
     );
 };

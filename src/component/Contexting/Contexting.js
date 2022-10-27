@@ -9,7 +9,7 @@ const Contexting = ({ children }) => {
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
     const [user, setUser] = useState(null)
-    const [loder , setLoder] =useState(true)
+    const [loder, setLoder] = useState(true)
     const googleSignIn = () => {
         return signInWithPopup(auth, googleProvider)
     }
@@ -36,7 +36,7 @@ const Contexting = ({ children }) => {
         setUser()
         return signOut(auth)
     }
-    const value = {googleSignIn,githubSignIn,createUser,Loginhandleclick, user, logOutClick,userNameAndUrl, loder }
+    const value = {googleSignIn,githubSignIn,createUser,Loginhandleclick, user, logOutClick,userNameAndUrl, loder}
     return (
         <callContext.Provider value={value}>
             {children}
