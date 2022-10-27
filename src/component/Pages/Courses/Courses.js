@@ -11,7 +11,7 @@ const Courses = () => {
                     <h1 className='text-xl font-bold mb-3 md:text-left text-center '>chose your language</h1>
                     <div className='md:block grid grid-cols-3 md:text-left text-center'>
                         {
-                            datas.map(data=><li key={data.index} className='list-none mb-4 md:hover:underline hover:no-underline md:border-none border md:mx-0 mx-2 md:p-0 p-2 md:rounded-none rounded-md md:bg-transparent bg-sky-800 '><Link className='md:text-lg' to={`/coursesdetails/${datas._id}`}>{data.title}</Link></li>)
+                            datas.map(data=><li key={data.index} className='list-none mb-4 md:hover:underline hover:no-underline md:border-none border md:mx-0 mx-2 md:p-0 p-2 md:rounded-none rounded-md md:bg-transparent bg-sky-800 '><Link className='md:text-lg' to={`/coursesdetails/${data._id}`}>{data.title}</Link></li>)
                         }
                     </div>
                 </div>

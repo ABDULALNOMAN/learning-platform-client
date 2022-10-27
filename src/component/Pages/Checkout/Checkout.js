@@ -4,7 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 const Checkout = () => {
     const data = useLoaderData()
     const { title,picture, details, } = data
-    console.log(data)
     return (
         <div className='w-full h-full mb-10'>
             <div className='container mx-auto w-3/4 p-4 translate-y-7 border-r-8 text-white capitalize bg-sky-800'>
