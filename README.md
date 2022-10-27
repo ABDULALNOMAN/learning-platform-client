@@ -1,6 +1,6 @@
 # website name : Titan
 
-## live site link : https://information-technology-d22c2.web.app/
+## live site link : https://information-technology-d22c2.firebaseapp.com/
 
 ## features 
 - There is an authentication system
