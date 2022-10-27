@@ -74,7 +74,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" placeholder="password" name='password' className="input input-bordered" />
                                 <label className="label">
-                                    <sub>if you don't have an existing account <Link to={'/     register'} className='text-info'>please register</Link></sub>
+                                    <sub>if you don't have an existing account <Link to={'/register'} className='text-info'>please register</Link></sub>
                                 </label>
                             </div>
                             <p className='text-red-700'>{errorShow || ''}</p>
